@@ -2,10 +2,12 @@
 const express = require("express");
 const { db } = require("./models/expense");
 const router = require("./routes/expenses")
+const cors = require("cors")
 
 //create an express app instance. the app object is what's use to define routes,add middleware and start the server
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 app.get("/", (req, res) => {
   res.redirect("/expenses");

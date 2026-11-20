@@ -19,6 +19,7 @@ router.get("/:id",async(req, res) => {
 
 //CREATE expense
 router.post("/",async(req, res)=>{
+    console.log(req.body)
     const expense = await Expense.create(req.body);
     res.status(201).json(expense);
 
